@@ -28,6 +28,6 @@ app.use("/api/users", usersRoute);
 app.use("/api/movies", moviesRoute);
 app.use("/api/lists", listsRoute);
 
-app.listen(process.env.PORT || 8000, () => {
+app.listen(process.env.BASE_URL || 8000, () => {
   console.log(`backend server is running on port ${port}`);
 });
