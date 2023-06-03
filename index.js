@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-// const cors = require("cors");
+const cors = require("cors");
 const port = 8000;
 const dotenv = require("dotenv");
 const authRoute = require("./routes/auth");
@@ -21,7 +21,7 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
