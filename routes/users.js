@@ -4,7 +4,8 @@ const CryptoJS = require("crypto-js");
 const verify = require("../verifyToken");
 
 // UPDATE
-
+// @desc Update user
+// @route PUT /api/users/:id
 router.put("/:id", verify, async (req, res) => {
   if (req.user.id === req.params.id || req.user.isAdmin) {
     if (req.body.password) {
